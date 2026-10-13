@@ -1,0 +1,533 @@
+{
+  "selected_model": "Ridge + log(1 + goals) target",
+  "n_train_rows": 124,
+  "n_test_rows": 84,
+  "inferential": [
+    {
+      "question": "Average goals per team per match",
+      "method": "95% confidence interval (z)",
+      "estimate": 1.4808,
+      "ci_low": 1.2914,
+      "ci_high": 1.6701,
+      "statistic": NaN,
+      "p_value": NaN,
+      "conclusion": NaN
+    },
+    {
+      "question": "Share of teams that score at least once",
+      "method": "95% CI for a proportion",
+      "estimate": 0.7356,
+      "ci_low": 0.6756,
+      "ci_high": 0.7955,
+      "statistic": NaN,
+      "p_value": NaN,
+      "conclusion": NaN
+    },
+    {
+      "question": "Do Elo favourites score more than underdogs?",
+      "method": "Welch two-sample t-test (greater)",
+      "estimate": 1.2308,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 7.0861,
+      "p_value": 0.0,
+      "conclusion": "reject H0"
+    },
+    {
+      "question": "Do host nations playing at home score more?",
+      "method": "Welch two-sample t-test (greater)",
+      "estimate": 0.8,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 1.9659,
+      "p_value": 0.0351,
+      "conclusion": "reject H0"
+    },
+    {
+      "question": "Do teams score a different number of goals in knockout games?",
+      "method": "Welch two-sample t-test (two-sided)",
+      "estimate": -0.0399,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": -0.2042,
+      "p_value": 0.8385,
+      "conclusion": "fail to reject H0"
+    },
+    {
+      "question": "Are goals more spread out than a Poisson count (variance = mean)?",
+      "method": "dispersion test, chi-square on (n-1) * variance / mean",
+      "estimate": 1.3112,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 271.4286,
+      "p_value": 0.0018,
+      "conclusion": "reject H0"
+    }
+  ],
+  "conditional": {
+    "Elo favourite": {
+      "0 goals": 0.144,
+      "1 goal": 0.24,
+      "2+ goals": 0.615
+    },
+    "Elo underdog": {
+      "0 goals": 0.385,
+      "1 goal": 0.442,
+      "2+ goals": 0.173
+    }
+  },
+  "nonlinear_variables": [],
+  "reset_p_goals": 0.19255489574671475,
+  "reset_p_log_goals": 0.836580408478151,
+  "ols_steps": [
+    {
+      "step": "1. Raw variables",
+      "variables": 8,
+      "R2": 0.3061,
+      "adj_R2": 0.2578,
+      "AIC": 414.7674,
+      "BIC": 440.1499,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 2.8335
+    },
+    {
+      "step": "2. Z-score standardised",
+      "variables": 8,
+      "R2": 0.3061,
+      "adj_R2": 0.2578,
+      "AIC": 414.7674,
+      "BIC": 440.1499,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 2.8335
+    },
+    {
+      "step": "3. Winsorised + Yeo-Johnson",
+      "variables": 8,
+      "R2": 0.3087,
+      "adj_R2": 0.2606,
+      "AIC": 414.2924,
+      "BIC": 439.675,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 2.8283
+    },
+    {
+      "step": "4. Backward elimination (p < 0.05)",
+      "variables": 1,
+      "R2": 0.2769,
+      "adj_R2": 0.271,
+      "AIC": 405.8679,
+      "BIC": 411.5085,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 1.0
+    },
+    {
+      "step": "5. log(1 + goals) target (R2 on the log scale)",
+      "variables": 8,
+      "R2": 0.3255,
+      "adj_R2": 0.2786,
+      "AIC": 181.8092,
+      "BIC": 207.1918,
+      "F_test_p": 0.0,
+      "significant_variables": 2,
+      "max_VIF": 2.8283
+    }
+  ],
+  "backward_elimination_keeps": [
+    "Elo_Rating_Diff"
+  ],
+  "max_vif": 2.8283184162477184,
+  "cv": {
+    "Simple LR: Elo only": {
+      "cv_RMSE": 1.221979,
+      "cv_RMSE_sd": 0.245901,
+      "cv_R2": 0.224579,
+      "test_RMSE": 1.18869,
+      "test_R2": 0.17323,
+      "test_MAE": 0.90122
+    },
+    "MLR: backward elimination": {
+      "cv_RMSE": 1.23389,
+      "cv_RMSE_sd": 0.253036,
+      "cv_R2": 0.20843,
+      "test_RMSE": 1.187967,
+      "test_R2": 0.174236,
+      "test_MAE": 0.900561
+    },
+    "Lasso (alpha by CV)": {
+      "cv_RMSE": 1.234002,
+      "cv_RMSE_sd": 0.263194,
+      "cv_R2": 0.214108,
+      "test_RMSE": 1.18989,
+      "test_R2": 0.17156,
+      "test_MAE": 0.923684
+    },
+    "Ridge + log(1 + goals) target": {
+      "cv_RMSE": 1.247795,
+      "cv_RMSE_sd": 0.265801,
+      "cv_R2": 0.194312,
+      "test_RMSE": 1.187645,
+      "test_R2": 0.174683,
+      "test_MAE": 0.926228
+    },
+    "Ridge (alpha by CV)": {
+      "cv_RMSE": 1.254491,
+      "cv_RMSE_sd": 0.267901,
+      "cv_R2": 0.187381,
+      "test_RMSE": 1.211544,
+      "test_R2": 0.141134,
+      "test_MAE": 0.959191
+    },
+    "MLR: winsorise + Yeo-Johnson": {
+      "cv_RMSE": 1.264138,
+      "cv_RMSE_sd": 0.265979,
+      "cv_R2": 0.168664,
+      "test_RMSE": 1.22841,
+      "test_R2": 0.117054,
+      "test_MAE": 0.966853
+    },
+    "MLR: z-score": {
+      "cv_RMSE": 1.265635,
+      "cv_RMSE_sd": 0.265174,
+      "cv_R2": 0.166768,
+      "test_RMSE": 1.236747,
+      "test_R2": 0.105029,
+      "test_MAE": 0.965527
+    },
+    "MLR: + log(1 + goals) target": {
+      "cv_RMSE": 1.269266,
+      "cv_RMSE_sd": 0.258388,
+      "cv_R2": 0.15662,
+      "test_RMSE": 1.214666,
+      "test_R2": 0.136702,
+      "test_MAE": 0.935198
+    },
+    "Baseline: training mean": {
+      "cv_RMSE": 1.424509,
+      "cv_RMSE_sd": 0.263368,
+      "cv_R2": -0.045094,
+      "test_RMSE": 1.320667,
+      "test_R2": -0.02055,
+      "test_MAE": 1.081029
+    }
+  },
+  "cv_improvement_vs_raw_mlr_pct": 1.4,
+  "p_selected_vs": {
+    "Simple LR: Elo only": 0.4718,
+    "MLR: backward elimination": 0.6144,
+    "Lasso (alpha by CV)": 0.5694,
+    "Ridge (alpha by CV)": 0.6599,
+    "MLR: winsorise + Yeo-Johnson": 0.4307,
+    "MLR: z-score": 0.4035,
+    "MLR: + log(1 + goals) target": 0.3881,
+    "Baseline: training mean": 0.0037
+  },
+  "selection_check": [
+    {
+      "model": "Lasso (alpha by CV)",
+      "cv_RMSE": 1.234,
+      "p_vs_cv_best": NaN,
+      "Shapiro-Wilk": 0.0,
+      "Jarque-Bera": 0.0,
+      "Breusch-Pagan": 0.0998,
+      "Ramsey RESET": 0.2164,
+      "all_assumptions_hold": false
+    },
+    {
+      "model": "Ridge + log(1 + goals) target",
+      "cv_RMSE": 1.2478,
+      "p_vs_cv_best": 0.5694,
+      "Shapiro-Wilk": 0.8824,
+      "Jarque-Bera": 0.895,
+      "Breusch-Pagan": 0.3388,
+      "Ramsey RESET": 0.8366,
+      "all_assumptions_hold": true
+    },
+    {
+      "model": "Ridge (alpha by CV)",
+      "cv_RMSE": 1.2545,
+      "p_vs_cv_best": 0.2903,
+      "Shapiro-Wilk": 0.0001,
+      "Jarque-Bera": 0.0,
+      "Breusch-Pagan": 0.4361,
+      "Ramsey RESET": 0.1926,
+      "all_assumptions_hold": false
+    },
+    {
+      "model": "MLR: winsorise + Yeo-Johnson",
+      "cv_RMSE": 1.2641,
+      "p_vs_cv_best": 0.2857,
+      "Shapiro-Wilk": 0.0001,
+      "Jarque-Bera": 0.0,
+      "Breusch-Pagan": 0.4361,
+      "Ramsey RESET": 0.1926,
+      "all_assumptions_hold": false
+    },
+    {
+      "model": "MLR: z-score",
+      "cv_RMSE": 1.2656,
+      "p_vs_cv_best": 0.2497,
+      "Shapiro-Wilk": 0.0001,
+      "Jarque-Bera": 0.0,
+      "Breusch-Pagan": 0.3258,
+      "Ramsey RESET": 0.1828,
+      "all_assumptions_hold": false
+    },
+    {
+      "model": "MLR: + log(1 + goals) target",
+      "cv_RMSE": 1.2693,
+      "p_vs_cv_best": 0.365,
+      "Shapiro-Wilk": 0.8824,
+      "Jarque-Bera": 0.895,
+      "Breusch-Pagan": 0.3388,
+      "Ramsey RESET": 0.8366,
+      "all_assumptions_hold": true
+    }
+  ],
+  "top_importance": "Elo_Rating_Diff",
+  "robustness": {
+    "Baseline: training mean": {
+      "RMSE_mean": 1.389024,
+      "RMSE_std": 0.104777,
+      "MAE_mean": 1.115749,
+      "MAE_std": 0.061256,
+      "R2_mean": -0.019558,
+      "R2_std": 0.023298
+    },
+    "MLR: backward elimination": {
+      "RMSE_mean": 1.22212,
+      "RMSE_std": 0.103387,
+      "MAE_mean": 0.918165,
+      "MAE_std": 0.065657,
+      "R2_mean": 0.208681,
+      "R2_std": 0.075089
+    },
+    "MLR: z-score": {
+      "RMSE_mean": 1.253534,
+      "RMSE_std": 0.103237,
+      "MAE_mean": 0.948167,
+      "MAE_std": 0.066532,
+      "R2_mean": 0.167111,
+      "R2_std": 0.079645
+    },
+    "Ridge + log(1 + goals) target": {
+      "RMSE_mean": 1.237758,
+      "RMSE_std": 0.105663,
+      "MAE_mean": 0.935172,
+      "MAE_std": 0.065335,
+      "R2_mean": 0.1897,
+      "R2_std": 0.060898
+    },
+    "Simple LR: Elo only": {
+      "RMSE_mean": 1.212722,
+      "RMSE_std": 0.100867,
+      "MAE_mean": 0.908357,
+      "MAE_std": 0.062728,
+      "R2_mean": 0.220962,
+      "R2_std": 0.07011
+    }
+  },
+  "test_metrics": {
+    "Ridge + log(1 + goals) target": {
+      "MAE": 0.926228,
+      "MSE": 1.410501,
+      "RMSE": 1.187645,
+      "NRMSE": 0.169664,
+      "R2": 0.174683
+    },
+    "Ridge (alpha by CV)": {
+      "MAE": 0.959191,
+      "MSE": 1.467838,
+      "RMSE": 1.211544,
+      "NRMSE": 0.173078,
+      "R2": 0.141134
+    },
+    "MLR: backward elimination": {
+      "MAE": 0.900561,
+      "MSE": 1.411266,
+      "RMSE": 1.187967,
+      "NRMSE": 0.16971,
+      "R2": 0.174236
+    },
+    "Simple LR: Elo only": {
+      "MAE": 0.90122,
+      "MSE": 1.412985,
+      "RMSE": 1.18869,
+      "NRMSE": 0.169813,
+      "R2": 0.17323
+    },
+    "Baseline: training mean": {
+      "MAE": 1.081029,
+      "MSE": 1.744162,
+      "RMSE": 1.320667,
+      "NRMSE": 0.188667,
+      "R2": -0.02055
+    }
+  },
+  "bootstrap_ci": {
+    "MAE": {
+      "estimate": 0.926228,
+      "ci_low": 0.787772,
+      "ci_high": 1.078698
+    },
+    "MSE": {
+      "estimate": 1.410501,
+      "ci_low": 1.000759,
+      "ci_high": 1.920028
+    },
+    "RMSE": {
+      "estimate": 1.187645,
+      "ci_low": 1.00038,
+      "ci_high": 1.385651
+    },
+    "NRMSE": {
+      "estimate": 0.169664,
+      "ci_low": 0.142911,
+      "ci_high": 0.19795
+    },
+    "R2": {
+      "estimate": 0.174683,
+      "ci_low": -0.168849,
+      "ci_high": 0.368123
+    }
+  },
+  "variables_used": [
+    "Elo_Rating_Diff",
+    "Past_30_Days_Win_Rate_Diff",
+    "Avg_Goals_Scored_L5_Diff",
+    "Avg_Goals_Conceded_L5_Diff",
+    "Team_Prior_Avg_Goals_Scored",
+    "Opp_Prior_Avg_Goals_Conceded",
+    "Knockout_Stage",
+    "Host_Advantage"
+  ],
+  "target_scale": "log(1 + goals)",
+  "rounded_exact": 0.35714285714285715,
+  "rounded_within_one": 0.8333333333333334,
+  "smearing_factor": 1.1172,
+  "assumptions": [
+    {
+      "test": "Shapiro-Wilk",
+      "statistic": 0.994,
+      "p_value": 0.8824
+    },
+    {
+      "test": "Jarque-Bera",
+      "statistic": 0.222,
+      "p_value": 0.895
+    },
+    {
+      "test": "Breusch-Pagan",
+      "statistic": 9.0421,
+      "p_value": 0.3388
+    },
+    {
+      "test": "Ramsey RESET",
+      "statistic": 0.0427,
+      "p_value": 0.8366
+    },
+    {
+      "test": "Durbin-Watson (about 2 is good)",
+      "statistic": 1.5247,
+      "p_value": NaN
+    }
+  ],
+  "raw_vs_log_assumptions": [
+    {
+      "target": "goals",
+      "test": "Shapiro-Wilk",
+      "p_value": 0.0001
+    },
+    {
+      "target": "goals",
+      "test": "Jarque-Bera",
+      "p_value": 0.0
+    },
+    {
+      "target": "goals",
+      "test": "Breusch-Pagan",
+      "p_value": 0.4361
+    },
+    {
+      "target": "goals",
+      "test": "Ramsey RESET",
+      "p_value": 0.1926
+    },
+    {
+      "target": "goals",
+      "test": "Durbin-Watson (about 2 is good)",
+      "p_value": NaN
+    },
+    {
+      "target": "log(1 + goals)",
+      "test": "Shapiro-Wilk",
+      "p_value": 0.8824
+    },
+    {
+      "target": "log(1 + goals)",
+      "test": "Jarque-Bera",
+      "p_value": 0.895
+    },
+    {
+      "target": "log(1 + goals)",
+      "test": "Breusch-Pagan",
+      "p_value": 0.3388
+    },
+    {
+      "target": "log(1 + goals)",
+      "test": "Ramsey RESET",
+      "p_value": 0.8366
+    },
+    {
+      "target": "log(1 + goals)",
+      "test": "Durbin-Watson (about 2 is good)",
+      "p_value": NaN
+    }
+  ],
+  "influential_rows": 5,
+  "routes": [
+    {
+      "route": "2.1 direct (goal difference model)",
+      "RMSE": 1.6483,
+      "MAE": 1.2826,
+      "R2": 0.3131,
+      "winner_accuracy": 0.9,
+      "brier": 0.5387
+    },
+    {
+      "route": "2.2 implied (team goals model)",
+      "RMSE": 1.6488,
+      "MAE": 1.2968,
+      "R2": 0.3127,
+      "winner_accuracy": 0.8,
+      "brier": 0.5589
+    },
+    {
+      "route": "average of both",
+      "RMSE": 1.6391,
+      "MAE": 1.2677,
+      "R2": 0.3208,
+      "winner_accuracy": 0.8333,
+      "brier": 0.5468
+    }
+  ],
+  "noise_floor": [
+    {
+      "target": "goal difference (42 matches)",
+      "perfect_model_RMSE_median": 1.7617,
+      "perfect_model_RMSE_5th_pct": 1.4377,
+      "perfect_model_RMSE_95th_pct": 2.1252,
+      "achieved_RMSE": 1.6483
+    },
+    {
+      "target": "team goals (84 rows)",
+      "perfect_model_RMSE_median": 1.2486,
+      "perfect_model_RMSE_5th_pct": 1.0714,
+      "perfect_model_RMSE_95th_pct": 1.4547,
+      "achieved_RMSE": 1.1876
+    }
+  ]
+}

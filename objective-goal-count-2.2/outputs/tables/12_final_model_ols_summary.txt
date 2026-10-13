@@ -1,0 +1,69 @@
+OLS refit on the variables used by Ridge + log(1 + goals) target (training set, transformed variables, target = log(1 + goals))
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.325
+Model:                            OLS   Adj. R-squared:                  0.279
+Method:                 Least Squares   F-statistic:                     6.936
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           1.98e-07
+Time:                        22:55:08   Log-Likelihood:                -81.905
+No. Observations:                 124   AIC:                             181.8
+Df Residuals:                     115   BIC:                             207.2
+Df Model:                           8                                         
+Covariance Type:            nonrobust                                         
+================================================================================================
+                                   coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+const                            0.7814      0.044     17.888      0.000       0.695       0.868
+Elo_Rating_Diff                  0.3035      0.066      4.577      0.000       0.172       0.435
+Past_30_Days_Win_Rate_Diff       0.0005      0.073      0.007      0.995      -0.144       0.145
+Avg_Goals_Scored_L5_Diff        -0.0047      0.073     -0.064      0.949      -0.150       0.141
+Avg_Goals_Conceded_L5_Diff       0.0338      0.063      0.536      0.593      -0.091       0.159
+Team_Prior_Avg_Goals_Scored     -0.0541      0.056     -0.971      0.334      -0.164       0.056
+Opp_Prior_Avg_Goals_Conceded     0.1162      0.053      2.200      0.030       0.012       0.221
+Knockout_Stage                   0.0370      0.050      0.736      0.463      -0.063       0.137
+Host_Advantage                   0.0505      0.046      1.108      0.270      -0.040       0.141
+==============================================================================
+Omnibus:                        0.079   Durbin-Watson:                   1.525
+Prob(Omnibus):                  0.961   Jarque-Bera (JB):                0.222
+Skew:                           0.037   Prob(JB):                        0.895
+Kurtosis:                       2.807   Cond. No.                         3.98
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Same model with heteroscedasticity-robust (HC3) standard errors
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.325
+Model:                            OLS   Adj. R-squared:                  0.279
+Method:                 Least Squares   F-statistic:                     9.407
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           6.30e-10
+Time:                        22:55:08   Log-Likelihood:                -81.905
+No. Observations:                 124   AIC:                             181.8
+Df Residuals:                     115   BIC:                             207.2
+Df Model:                           8                                         
+Covariance Type:                  HC3                                         
+================================================================================================
+                                   coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------------------
+const                            0.7814      0.045     17.348      0.000       0.692       0.871
+Elo_Rating_Diff                  0.3035      0.064      4.742      0.000       0.177       0.430
+Past_30_Days_Win_Rate_Diff       0.0005      0.073      0.007      0.995      -0.144       0.145
+Avg_Goals_Scored_L5_Diff        -0.0047      0.081     -0.058      0.954      -0.166       0.156
+Avg_Goals_Conceded_L5_Diff       0.0338      0.064      0.526      0.600      -0.094       0.161
+Team_Prior_Avg_Goals_Scored     -0.0541      0.065     -0.830      0.408      -0.183       0.075
+Opp_Prior_Avg_Goals_Conceded     0.1162      0.057      2.051      0.043       0.004       0.228
+Knockout_Stage                   0.0370      0.049      0.749      0.455      -0.061       0.135
+Host_Advantage                   0.0505      0.027      1.843      0.068      -0.004       0.105
+==============================================================================
+Omnibus:                        0.079   Durbin-Watson:                   1.525
+Prob(Omnibus):                  0.961   Jarque-Bera (JB):                0.222
+Skew:                           0.037   Prob(JB):                        0.895
+Kurtosis:                       2.807   Cond. No.                         3.98
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

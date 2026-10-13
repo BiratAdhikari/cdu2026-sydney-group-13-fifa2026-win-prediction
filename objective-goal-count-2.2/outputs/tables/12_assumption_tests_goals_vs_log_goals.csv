@@ -1,0 +1,11 @@
+assumption,test,statistic,p_value,holds_at_5pct,target
+Normal residuals,Shapiro-Wilk,0.9436,0.0001,no,goals
+Normal residuals,Jarque-Bera,51.1758,0.0,no,goals
+Constant variance,Breusch-Pagan,7.9728,0.4361,yes,goals
+Linear form,Ramsey RESET,1.7182,0.1926,yes,goals
+Independent errors,Durbin-Watson (about 2 is good),1.5818,,,goals
+Normal residuals,Shapiro-Wilk,0.994,0.8824,yes,log(1 + goals)
+Normal residuals,Jarque-Bera,0.222,0.895,yes,log(1 + goals)
+Constant variance,Breusch-Pagan,9.0421,0.3388,yes,log(1 + goals)
+Linear form,Ramsey RESET,0.0427,0.8366,yes,log(1 + goals)
+Independent errors,Durbin-Watson (about 2 is good),1.5247,,,log(1 + goals)

@@ -1,0 +1,7 @@
+variable,linear_r2,quadratic_r2,x_squared_p
+Elo_Rating_Diff,0.2755,0.2846,0.2169
+Past_30_Days_Win_Rate_Diff,0.1257,0.126,0.8486
+Avg_Goals_Scored_L5_Diff,0.1138,0.1168,0.5234
+Avg_Goals_Conceded_L5_Diff,0.1028,0.1083,0.3901
+Team_Prior_Avg_Goals_Scored,0.0048,0.0072,0.5912
+Opp_Prior_Avg_Goals_Conceded,0.0837,0.0842,0.7846

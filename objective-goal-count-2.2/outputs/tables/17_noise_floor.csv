@@ -1,0 +1,3 @@
+target,perfect_model_RMSE_median,perfect_model_RMSE_5th_pct,perfect_model_RMSE_95th_pct,achieved_RMSE
+goal difference (42 matches),1.7617,1.4377,2.1252,1.6483
+team goals (84 rows),1.2486,1.0714,1.4547,1.1876

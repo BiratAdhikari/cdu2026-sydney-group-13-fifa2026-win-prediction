@@ -1,0 +1,27 @@
+4. Backward elimination (p < 0.05)
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.277
+Model:                            OLS   Adj. R-squared:                  0.271
+Method:                 Least Squares   F-statistic:                     46.73
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           3.45e-10
+Time:                        22:53:54   Log-Likelihood:                -200.93
+No. Observations:                 124   AIC:                             405.9
+Df Residuals:                     122   BIC:                             411.5
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+===================================================================================
+                      coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------
+const               1.5565      0.111     14.054      0.000       1.337       1.776
+Elo_Rating_Diff     0.7570      0.111      6.836      0.000       0.538       0.976
+==============================================================================
+Omnibus:                       22.983   Durbin-Watson:                   1.604
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               33.472
+Skew:                           0.928   Prob(JB):                     5.39e-08
+Kurtosis:                       4.741   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
