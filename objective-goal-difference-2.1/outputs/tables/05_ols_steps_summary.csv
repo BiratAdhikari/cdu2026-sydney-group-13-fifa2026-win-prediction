@@ -1,0 +1,6 @@
+step,variables,R2,adj_R2,AIC,BIC,F_test_p,significant_variables,max_VIF
+1. Raw variables,8,0.5131,0.4396,237.1065,256.2508,0.0,0,22.0343
+2. Z-score standardised,8,0.5131,0.4396,237.1065,256.2508,0.0,0,22.0343
+3. Winsorised + Yeo-Johnson,8,0.5116,0.4378,237.3043,256.4485,0.0,0,22.5577
+4. FIFA rank dropped (collinearity),7,0.5114,0.448,235.3306,252.3477,0.0,1,3.3873
+5. Backward elimination (p < 0.05),1,0.4991,0.4907,224.8713,229.1256,0.0,1,1.0

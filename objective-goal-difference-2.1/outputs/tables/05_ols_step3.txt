@@ -1,0 +1,34 @@
+3. Winsorised + Yeo-Johnson
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.512
+Model:                            OLS   Adj. R-squared:                  0.438
+Method:                 Least Squares   F-statistic:                     6.939
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           3.25e-06
+Time:                        22:58:55   Log-Likelihood:                -109.65
+No. Observations:                  62   AIC:                             237.3
+Df Residuals:                      53   BIC:                             256.4
+Df Model:                           8                                         
+Covariance Type:            nonrobust                                         
+==============================================================================================
+                                 coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                          0.5323      0.195      2.732      0.009       0.141       0.923
+FIFA_Rank_Diff                -0.1162      0.774     -0.150      0.881      -1.669       1.437
+Elo_Rating_Diff                1.2841      0.925      1.387      0.171      -0.572       3.140
+Past_30_Days_Win_Rate_Diff    -0.0649      0.328     -0.198      0.844      -0.722       0.593
+Avg_Goals_Scored_L5_Diff       0.0535      0.320      0.167      0.868      -0.589       0.696
+Avg_Goals_Conceded_L5_Diff    -0.2407      0.276     -0.872      0.387      -0.795       0.313
+Days_Rest_Diff                 0.0526      0.201      0.261      0.795      -0.351       0.457
+Avg_xG_Margin_Diff            -0.0511      0.280     -0.182      0.856      -0.613       0.511
+Head_To_Head_Win_Pct_Diff     -0.1167      0.243     -0.480      0.633      -0.604       0.371
+==============================================================================
+Omnibus:                        0.106   Durbin-Watson:                   1.843
+Prob(Omnibus):                  0.948   Jarque-Bera (JB):                0.014
+Skew:                           0.030   Prob(JB):                        0.993
+Kurtosis:                       2.957   Cond. No.                         12.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

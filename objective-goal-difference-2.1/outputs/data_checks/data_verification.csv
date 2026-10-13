@@ -1,0 +1,5 @@
+check,found,required,passed
+2.1 rows (one per match),104,104,True
+2.1 explanatory variables,8,8,True
+2.1 missing values,0,0,True
+2.1 rows where goal difference = Team A goals - Team B goals,104,104,True

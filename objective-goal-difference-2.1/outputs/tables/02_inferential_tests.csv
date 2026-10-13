@@ -1,0 +1,6 @@
+question,method,estimate,ci_low,ci_high,statistic,p_value,conclusion
+Average goal difference (Team A - Team B),95% confidence interval (z),0.4808,0.0918,0.8698,,,
+Does Team A score more than Team B on average?,"one-sample t-test, H0: mean = 0, H1: mean > 0",0.4808,,,2.4223,0.0086,reject H0
+Is there still a Team A advantage once Elo is accounted for?,t-test on the intercept of GD ~ Elo diff,0.1861,,,1.1939,0.2353,fail to reject H0
+How often does the higher-Elo team win a match that has a winner?,95% confidence interval for a proportion,0.8375,0.7567,0.9183,,,
+Are knockout matches closer than group matches?,"Welch two-sample t-test on |GD|, H1: group > knockout",0.309,,,1.302,0.098,fail to reject H0

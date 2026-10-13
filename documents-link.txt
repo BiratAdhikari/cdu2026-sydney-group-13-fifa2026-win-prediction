@@ -1,0 +1,9 @@
+FIFA World Cup 2026 - Linear Regression (HIT140 Assessment 3)
+Document links
+
+Code repository:   https://github.com/BiratAdhikari/cdu2026-sydney-group-13-fifa2026-win-prediction.git
+
+Data sources used to build the datasets:
+FIFA Official Website:  https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/statistics
+The Stats Don't Lie:    https://www.thestatsdontlie.com/football/world-cup-2026/
+FBref:                  https://fbref.com/en/
