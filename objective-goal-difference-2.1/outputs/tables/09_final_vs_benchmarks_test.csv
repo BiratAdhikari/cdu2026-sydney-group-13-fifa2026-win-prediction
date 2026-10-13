@@ -1,0 +1,5 @@
+model,MAE,MSE,RMSE,NRMSE,R2
+Lasso (alpha by CV),1.2826,2.7171,1.6484,0.1648,0.313
+MLR: backward elimination,1.2582,2.7054,1.6448,0.1645,0.316
+Simple LR: Elo only,1.2817,2.7862,1.6692,0.1669,0.2956
+Baseline: training mean,1.4777,3.9715,1.9929,0.1993,-0.0041

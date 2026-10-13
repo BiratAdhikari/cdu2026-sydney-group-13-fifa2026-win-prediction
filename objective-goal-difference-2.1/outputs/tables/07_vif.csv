@@ -1,0 +1,9 @@
+variable,VIF_all_8,VIF_rank_dropped
+FIFA_Rank_Diff,15.786,
+Elo_Rating_Diff,22.558,3.387
+Past_30_Days_Win_Rate_Diff,2.831,2.825
+Avg_Goals_Scored_L5_Diff,2.701,2.694
+Avg_Goals_Conceded_L5_Diff,2.008,2.005
+Days_Rest_Diff,1.068,1.063
+Avg_xG_Margin_Diff,2.07,1.941
+Head_To_Head_Win_Pct_Diff,1.555,1.38
