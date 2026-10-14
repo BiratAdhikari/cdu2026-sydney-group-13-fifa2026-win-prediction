@@ -5,8 +5,8 @@ OLS refit on the variables used by Lasso (alpha by CV) (training set, transforme
 Dep. Variable:                      y   R-squared:                       0.508
 Model:                            OLS   Adj. R-squared:                  0.483
 Method:                 Least Squares   F-statistic:                     20.00
-Date:                Tue, 13 Oct 2026   Prob (F-statistic):           5.07e-09
-Time:                        22:52:43   Log-Likelihood:                -109.85
+Date:                Wed, 14 Oct 2026   Prob (F-statistic):           5.07e-09
+Time:                        23:59:24   Log-Likelihood:                -109.85
 No. Observations:                  62   AIC:                             227.7
 Df Residuals:                      58   BIC:                             236.2
 Df Model:                           3                                         

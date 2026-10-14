@@ -5,8 +5,8 @@ OLS refit on the variables used by Ridge + log(1 + goals) target (training set, 
 Dep. Variable:                      y   R-squared:                       0.325
 Model:                            OLS   Adj. R-squared:                  0.279
 Method:                 Least Squares   F-statistic:                     6.936
-Date:                Tue, 13 Oct 2026   Prob (F-statistic):           1.98e-07
-Time:                        22:55:08   Log-Likelihood:                -81.905
+Date:                Thu, 15 Oct 2026   Prob (F-statistic):           1.98e-07
+Time:                        00:01:33   Log-Likelihood:                -81.905
 No. Observations:                 124   AIC:                             181.8
 Df Residuals:                     115   BIC:                             207.2
 Df Model:                           8                                         
@@ -40,8 +40,8 @@ Same model with heteroscedasticity-robust (HC3) standard errors
 Dep. Variable:                      y   R-squared:                       0.325
 Model:                            OLS   Adj. R-squared:                  0.279
 Method:                 Least Squares   F-statistic:                     9.407
-Date:                Tue, 13 Oct 2026   Prob (F-statistic):           6.30e-10
-Time:                        22:55:08   Log-Likelihood:                -81.905
+Date:                Thu, 15 Oct 2026   Prob (F-statistic):           6.30e-10
+Time:                        00:01:33   Log-Likelihood:                -81.905
 No. Observations:                 124   AIC:                             181.8
 Df Residuals:                     115   BIC:                             207.2
 Df Model:                           8                                         
