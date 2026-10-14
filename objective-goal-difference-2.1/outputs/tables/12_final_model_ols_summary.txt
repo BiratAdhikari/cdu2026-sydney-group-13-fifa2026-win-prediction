@@ -1,0 +1,29 @@
+OLS refit on the variables used by Lasso (alpha by CV) (training set, transformed scale)
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.508
+Model:                            OLS   Adj. R-squared:                  0.483
+Method:                 Least Squares   F-statistic:                     20.00
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           5.07e-09
+Time:                        22:52:43   Log-Likelihood:                -109.85
+No. Observations:                  62   AIC:                             227.7
+Df Residuals:                      58   BIC:                             236.2
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================================
+                                 coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                          0.5323      0.187      2.848      0.006       0.158       0.906
+FIFA_Rank_Diff                -0.2584      0.682     -0.379      0.706      -1.624       1.107
+Elo_Rating_Diff                1.0665      0.700      1.523      0.133      -0.335       2.468
+Avg_Goals_Conceded_L5_Diff    -0.2226      0.222     -1.004      0.319      -0.666       0.221
+==============================================================================
+Omnibus:                        0.259   Durbin-Watson:                   1.832
+Prob(Omnibus):                  0.879   Jarque-Bera (JB):                0.081
+Skew:                           0.089   Prob(JB):                        0.960
+Kurtosis:                       3.008   Cond. No.                         7.93
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

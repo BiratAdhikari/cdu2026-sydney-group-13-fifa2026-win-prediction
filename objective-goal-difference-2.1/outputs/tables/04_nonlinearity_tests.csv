@@ -1,0 +1,9 @@
+variable,linear_r2,quadratic_r2,x_squared_p
+FIFA_Rank_Diff,0.469,0.4743,0.4426
+Elo_Rating_Diff,0.4962,0.4966,0.8146
+Past_30_Days_Win_Rate_Diff,0.2186,0.2207,0.6915
+Avg_Goals_Scored_L5_Diff,0.2125,0.2148,0.6805
+Avg_Goals_Conceded_L5_Diff,0.2098,0.2107,0.7966
+Days_Rest_Diff,0.0014,0.0017,0.8806
+Avg_xG_Margin_Diff,0.1947,0.2156,0.2148
+Head_To_Head_Win_Pct_Diff,0.0798,0.1,0.2544

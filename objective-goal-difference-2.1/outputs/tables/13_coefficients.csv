@@ -1,0 +1,9 @@
+variable,"OLS, all 8 (transformed)",Ridge,Lasso
+FIFA_Rank_Diff,-0.1162,-0.3969,-0.0716
+Elo_Rating_Diff,1.2841,0.4094,1.0606
+Past_30_Days_Win_Rate_Diff,-0.0649,0.1046,0.0
+Avg_Goals_Scored_L5_Diff,0.0535,0.1299,0.0
+Avg_Goals_Conceded_L5_Diff,-0.2407,-0.1967,-0.0306
+Days_Rest_Diff,0.0526,0.0435,0.0
+Avg_xG_Margin_Diff,-0.0511,0.1401,0.0
+Head_To_Head_Win_Pct_Diff,-0.1167,0.0669,0.0

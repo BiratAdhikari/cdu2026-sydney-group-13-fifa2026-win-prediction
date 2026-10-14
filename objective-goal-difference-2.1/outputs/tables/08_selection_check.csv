@@ -1,0 +1,6 @@
+model,cv_RMSE,p_vs_cv_best,Shapiro-Wilk,Jarque-Bera,Breusch-Pagan,Ramsey RESET,all_assumptions_hold
+Lasso (alpha by CV),1.5165,,0.5777,0.9602,0.3702,0.8572,True
+Ridge (alpha by CV),1.5565,0.3163,0.5847,0.993,0.7078,0.7958,True
+MLR: FIFA rank dropped,1.627,0.1608,0.5785,0.992,0.6531,0.7599,True
+MLR: winsorise + Yeo-Johnson,1.6589,0.079,0.5847,0.993,0.7078,0.7958,True
+MLR: z-score,1.8263,0.2089,0.5124,0.9422,0.7981,0.7745,True

@@ -1,0 +1,358 @@
+{
+  "selected_model": "Lasso (alpha by CV)",
+  "n_train": 62,
+  "n_test": 42,
+  "inferential": [
+    {
+      "question": "Average goal difference (Team A - Team B)",
+      "method": "95% confidence interval (z)",
+      "estimate": 0.4808,
+      "ci_low": 0.0918,
+      "ci_high": 0.8698,
+      "statistic": NaN,
+      "p_value": NaN,
+      "conclusion": NaN
+    },
+    {
+      "question": "Does Team A score more than Team B on average?",
+      "method": "one-sample t-test, H0: mean = 0, H1: mean > 0",
+      "estimate": 0.4808,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 2.4223,
+      "p_value": 0.0086,
+      "conclusion": "reject H0"
+    },
+    {
+      "question": "Is there still a Team A advantage once Elo is accounted for?",
+      "method": "t-test on the intercept of GD ~ Elo diff",
+      "estimate": 0.1861,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 1.1939,
+      "p_value": 0.2353,
+      "conclusion": "fail to reject H0"
+    },
+    {
+      "question": "How often does the higher-Elo team win a match that has a winner?",
+      "method": "95% confidence interval for a proportion",
+      "estimate": 0.8375,
+      "ci_low": 0.7567,
+      "ci_high": 0.9183,
+      "statistic": NaN,
+      "p_value": NaN,
+      "conclusion": NaN
+    },
+    {
+      "question": "Are knockout matches closer than group matches?",
+      "method": "Welch two-sample t-test on |GD|, H1: group > knockout",
+      "estimate": 0.309,
+      "ci_low": NaN,
+      "ci_high": NaN,
+      "statistic": 1.302,
+      "p_value": 0.098,
+      "conclusion": "fail to reject H0"
+    }
+  ],
+  "nonlinear_variables": [],
+  "ols_steps": [
+    {
+      "step": "1. Raw variables",
+      "variables": 8,
+      "R2": 0.5131,
+      "adj_R2": 0.4396,
+      "AIC": 237.1065,
+      "BIC": 256.2508,
+      "F_test_p": 0.0,
+      "significant_variables": 0,
+      "max_VIF": 22.0343
+    },
+    {
+      "step": "2. Z-score standardised",
+      "variables": 8,
+      "R2": 0.5131,
+      "adj_R2": 0.4396,
+      "AIC": 237.1065,
+      "BIC": 256.2508,
+      "F_test_p": 0.0,
+      "significant_variables": 0,
+      "max_VIF": 22.0343
+    },
+    {
+      "step": "3. Winsorised + Yeo-Johnson",
+      "variables": 8,
+      "R2": 0.5116,
+      "adj_R2": 0.4378,
+      "AIC": 237.3043,
+      "BIC": 256.4485,
+      "F_test_p": 0.0,
+      "significant_variables": 0,
+      "max_VIF": 22.5577
+    },
+    {
+      "step": "4. FIFA rank dropped (collinearity)",
+      "variables": 7,
+      "R2": 0.5114,
+      "adj_R2": 0.448,
+      "AIC": 235.3306,
+      "BIC": 252.3477,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 3.3873
+    },
+    {
+      "step": "5. Backward elimination (p < 0.05)",
+      "variables": 1,
+      "R2": 0.4991,
+      "adj_R2": 0.4907,
+      "AIC": 224.8713,
+      "BIC": 229.1256,
+      "F_test_p": 0.0,
+      "significant_variables": 1,
+      "max_VIF": 1.0
+    }
+  ],
+  "backward_elimination_keeps": [
+    "Elo_Rating_Diff"
+  ],
+  "cv": {
+    "MLR: backward elimination": {
+      "cv_RMSE": 1.45517,
+      "cv_RMSE_sd": 0.268545,
+      "cv_R2": 0.39844,
+      "test_RMSE": 1.644801,
+      "test_R2": 0.315999,
+      "test_MAE": 1.258201
+    },
+    "Simple LR: Elo only": {
+      "cv_RMSE": 1.465338,
+      "cv_RMSE_sd": 0.265389,
+      "cv_R2": 0.388986,
+      "test_RMSE": 1.669183,
+      "test_R2": 0.29557,
+      "test_MAE": 1.281707
+    },
+    "Lasso (alpha by CV)": {
+      "cv_RMSE": 1.516527,
+      "cv_RMSE_sd": 0.295666,
+      "cv_R2": 0.356933,
+      "test_RMSE": 1.648352,
+      "test_R2": 0.313043,
+      "test_MAE": 1.282625
+    },
+    "Ridge (alpha by CV)": {
+      "cv_RMSE": 1.556477,
+      "cv_RMSE_sd": 0.312413,
+      "cv_R2": 0.320211,
+      "test_RMSE": 1.649444,
+      "test_R2": 0.312132,
+      "test_MAE": 1.28619
+    },
+    "MLR: FIFA rank dropped": {
+      "cv_RMSE": 1.626977,
+      "cv_RMSE_sd": 0.292472,
+      "cv_R2": 0.232313,
+      "test_RMSE": 1.716566,
+      "test_R2": 0.255009,
+      "test_MAE": 1.302432
+    },
+    "MLR: winsorise + Yeo-Johnson": {
+      "cv_RMSE": 1.658879,
+      "cv_RMSE_sd": 0.296746,
+      "cv_R2": 0.198798,
+      "test_RMSE": 1.713222,
+      "test_R2": 0.257909,
+      "test_MAE": 1.309161
+    },
+    "MLR: z-score": {
+      "cv_RMSE": 1.826319,
+      "cv_RMSE_sd": 0.515351,
+      "cv_R2": -0.084924,
+      "test_RMSE": 1.767715,
+      "test_R2": 0.209951,
+      "test_MAE": 1.368502
+    },
+    "Baseline: training mean": {
+      "cv_RMSE": 2.038252,
+      "cv_RMSE_sd": 0.362501,
+      "cv_R2": -0.144216,
+      "test_RMSE": 1.992855,
+      "test_R2": -0.00411,
+      "test_MAE": 1.477727
+    }
+  },
+  "cv_improvement_vs_raw_mlr_pct": 17.0,
+  "p_selected_vs": {
+    "MLR: backward elimination": 0.2071,
+    "Simple LR: Elo only": 0.3265,
+    "Ridge (alpha by CV)": 0.3163,
+    "MLR: FIFA rank dropped": 0.1608,
+    "MLR: winsorise + Yeo-Johnson": 0.079,
+    "MLR: z-score": 0.2089,
+    "Baseline: training mean": 0.0
+  },
+  "lasso_keeps": [
+    "FIFA_Rank_Diff",
+    "Elo_Rating_Diff",
+    "Avg_Goals_Conceded_L5_Diff"
+  ],
+  "top_importance": "Elo_Rating_Diff",
+  "robustness": {
+    "Baseline: training mean": {
+      "RMSE_mean": 2.028495,
+      "RMSE_std": 0.172691,
+      "MAE_mean": 1.587604,
+      "MAE_std": 0.143089,
+      "R2_mean": -0.044928,
+      "R2_std": 0.063
+    },
+    "Lasso (alpha by CV)": {
+      "RMSE_mean": 1.617785,
+      "RMSE_std": 0.144552,
+      "MAE_mean": 1.261496,
+      "MAE_std": 0.120692,
+      "R2_mean": 0.331497,
+      "R2_std": 0.087383
+    },
+    "MLR: backward elimination": {
+      "RMSE_mean": 1.599679,
+      "RMSE_std": 0.161741,
+      "MAE_mean": 1.236206,
+      "MAE_std": 0.132064,
+      "R2_mean": 0.344096,
+      "R2_std": 0.112407
+    },
+    "MLR: z-score": {
+      "RMSE_mean": 1.934753,
+      "RMSE_std": 0.53592,
+      "MAE_mean": 1.399005,
+      "MAE_std": 0.191572,
+      "R2_mean": -0.036257,
+      "R2_std": 0.828781
+    },
+    "Simple LR: Elo only": {
+      "RMSE_mean": 1.563954,
+      "RMSE_std": 0.152653,
+      "MAE_mean": 1.2115,
+      "MAE_std": 0.119737,
+      "R2_mean": 0.373645,
+      "R2_std": 0.100048
+    }
+  },
+  "test_metrics": {
+    "Lasso (alpha by CV)": {
+      "MAE": 1.282625,
+      "MSE": 2.717063,
+      "RMSE": 1.648352,
+      "NRMSE": 0.164835,
+      "R2": 0.313043
+    },
+    "MLR: backward elimination": {
+      "MAE": 1.258201,
+      "MSE": 2.705369,
+      "RMSE": 1.644801,
+      "NRMSE": 0.16448,
+      "R2": 0.315999
+    },
+    "Simple LR: Elo only": {
+      "MAE": 1.281707,
+      "MSE": 2.786171,
+      "RMSE": 1.669183,
+      "NRMSE": 0.166918,
+      "R2": 0.29557
+    },
+    "Baseline: training mean": {
+      "MAE": 1.477727,
+      "MSE": 3.971471,
+      "RMSE": 1.992855,
+      "NRMSE": 0.199285,
+      "R2": -0.00411
+    }
+  },
+  "bootstrap_ci": {
+    "MAE": {
+      "estimate": 1.282625,
+      "ci_low": 0.998409,
+      "ci_high": 1.611986
+    },
+    "MSE": {
+      "estimate": 2.717063,
+      "ci_low": 1.54621,
+      "ci_high": 4.253571
+    },
+    "RMSE": {
+      "estimate": 1.648352,
+      "ci_low": 1.243467,
+      "ci_high": 2.062419
+    },
+    "NRMSE": {
+      "estimate": 0.164835,
+      "ci_low": 0.124347,
+      "ci_high": 0.206242
+    },
+    "R2": {
+      "estimate": 0.313043,
+      "ci_low": 0.017415,
+      "ci_high": 0.47897
+    }
+  },
+  "variables_used": [
+    "FIFA_Rank_Diff",
+    "Elo_Rating_Diff",
+    "Avg_Goals_Conceded_L5_Diff"
+  ],
+  "result_accuracy": 0.6666666666666666,
+  "winner_accuracy": 0.9,
+  "decisive_test_matches": 30,
+  "winners_correct": 27,
+  "brier_model": 0.5387287176190477,
+  "brier_baseline": 0.650611961746197,
+  "assumptions": [
+    {
+      "test": "Shapiro-Wilk",
+      "statistic": 0.9836,
+      "p_value": 0.5777
+    },
+    {
+      "test": "Jarque-Bera",
+      "statistic": 0.0813,
+      "p_value": 0.9602
+    },
+    {
+      "test": "Breusch-Pagan",
+      "statistic": 3.142,
+      "p_value": 0.3702
+    },
+    {
+      "test": "Ramsey RESET",
+      "statistic": 0.0327,
+      "p_value": 0.8572
+    },
+    {
+      "test": "Durbin-Watson (about 2 is good)",
+      "statistic": 1.8317,
+      "p_value": NaN
+    }
+  ],
+  "influential_matches": 3,
+  "biggest_misses": [
+    {
+      "Team_A": "Canada",
+      "Team_B": "Qatar",
+      "actual_GD": 6,
+      "predicted_GD": 0.79
+    },
+    {
+      "Team_A": "Senegal",
+      "Team_B": "Iraq",
+      "actual_GD": 5,
+      "predicted_GD": 1.33
+    },
+    {
+      "Team_A": "USA",
+      "Team_B": "Belgium",
+      "actual_GD": -3,
+      "predicted_GD": -0.01
+    }
+  ]
+}

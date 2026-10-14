@@ -1,0 +1,6 @@
+model,RMSE_mean,RMSE_std,MAE_mean,MAE_std,R2_mean,R2_std
+Baseline: training mean,2.0285,0.1727,1.5876,0.1431,-0.0449,0.063
+Lasso (alpha by CV),1.6178,0.1446,1.2615,0.1207,0.3315,0.0874
+MLR: backward elimination,1.5997,0.1617,1.2362,0.1321,0.3441,0.1124
+MLR: z-score,1.9348,0.5359,1.399,0.1916,-0.0363,0.8288
+Simple LR: Elo only,1.564,0.1527,1.2115,0.1197,0.3736,0.1

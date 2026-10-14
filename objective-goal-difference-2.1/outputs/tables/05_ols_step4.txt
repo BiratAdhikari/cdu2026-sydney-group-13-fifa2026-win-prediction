@@ -1,0 +1,33 @@
+4. FIFA rank dropped (collinearity)
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.511
+Model:                            OLS   Adj. R-squared:                  0.448
+Method:                 Least Squares   F-statistic:                     8.073
+Date:                Tue, 13 Oct 2026   Prob (F-statistic):           1.09e-06
+Time:                        22:58:55   Log-Likelihood:                -109.67
+No. Observations:                  62   AIC:                             235.3
+Df Residuals:                      54   BIC:                             252.3
+Df Model:                           7                                         
+Covariance Type:            nonrobust                                         
+==============================================================================================
+                                 coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------
+const                          0.5323      0.193      2.757      0.008       0.145       0.919
+Elo_Rating_Diff                1.4121      0.355      3.974      0.000       0.700       2.125
+Past_30_Days_Win_Rate_Diff    -0.0670      0.325     -0.206      0.837      -0.718       0.584
+Avg_Goals_Scored_L5_Diff       0.0510      0.317      0.161      0.873      -0.584       0.686
+Avg_Goals_Conceded_L5_Diff    -0.2390      0.273     -0.874      0.386      -0.787       0.309
+Days_Rest_Diff                 0.0547      0.199      0.275      0.784      -0.344       0.454
+Avg_xG_Margin_Diff            -0.0616      0.269     -0.229      0.820      -0.601       0.478
+Head_To_Head_Win_Pct_Diff     -0.1289      0.227     -0.568      0.572      -0.584       0.326
+==============================================================================
+Omnibus:                        0.122   Durbin-Watson:                   1.851
+Prob(Omnibus):                  0.941   Jarque-Bera (JB):                0.016
+Skew:                           0.036   Prob(JB):                        0.992
+Kurtosis:                       2.966   Cond. No.                         4.16
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
