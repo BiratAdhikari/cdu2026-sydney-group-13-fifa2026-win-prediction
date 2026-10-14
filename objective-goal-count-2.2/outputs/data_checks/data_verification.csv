@@ -1,0 +1,7 @@
+check,found,required,passed
+2.2 rows (one per team per match),208,208,True
+2.2 explanatory variables,8,8,True
+2.2 missing values,0,0,True
+Explanatory variables shared by 2.1 and 2.2,4,at most 4,True
+2.2 rows whose goals match the 2.1 score,208,208,True
+2.2 rows whose prior averages rebuild from earlier matches only,208,208,True
