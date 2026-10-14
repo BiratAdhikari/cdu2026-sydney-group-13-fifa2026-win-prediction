@@ -1,0 +1,7 @@
+question,method,estimate,ci_low,ci_high,statistic,p_value,conclusion
+Average goals per team per match,95% confidence interval (z),1.4808,1.2914,1.6701,,,
+Share of teams that score at least once,95% CI for a proportion,0.7356,0.6756,0.7955,,,
+Do Elo favourites score more than underdogs?,Welch two-sample t-test (greater),1.2308,,,7.0861,0.0,reject H0
+Do host nations playing at home score more?,Welch two-sample t-test (greater),0.8,,,1.9659,0.0351,reject H0
+Do teams score a different number of goals in knockout games?,Welch two-sample t-test (two-sided),-0.0399,,,-0.2042,0.8385,fail to reject H0
+Are goals more spread out than a Poisson count (variance = mean)?,"dispersion test, chi-square on (n-1) * variance / mean",1.3112,,,271.4286,0.0018,reject H0

@@ -1,0 +1,13 @@
+variable,stage,skewness,shapiro_p
+Elo_Rating_Diff,raw,0.0,0.1565
+Past_30_Days_Win_Rate_Diff,raw,0.0,0.0407
+Avg_Goals_Scored_L5_Diff,raw,0.0,0.8286
+Avg_Goals_Conceded_L5_Diff,raw,0.0,0.2584
+Team_Prior_Avg_Goals_Scored,raw,0.8545,0.0
+Opp_Prior_Avg_Goals_Conceded,raw,0.9995,0.0
+Elo_Rating_Diff,winsorised + Yeo-Johnson,0.0,0.0551
+Past_30_Days_Win_Rate_Diff,winsorised + Yeo-Johnson,0.0,0.0407
+Avg_Goals_Scored_L5_Diff,winsorised + Yeo-Johnson,0.0,0.2909
+Avg_Goals_Conceded_L5_Diff,winsorised + Yeo-Johnson,0.0,0.2964
+Team_Prior_Avg_Goals_Scored,winsorised + Yeo-Johnson,0.0145,0.0008
+Opp_Prior_Avg_Goals_Conceded,winsorised + Yeo-Johnson,-0.0007,0.0003

@@ -1,0 +1,9 @@
+variable,"OLS, all 8 (transformed)",Ridge,Lasso,Selected: Ridge + log(1 + goals) target (effect for an average team)
+Elo_Rating_Diff,0.7312,0.5178,0.6024,0.5732
+Past_30_Days_Win_Rate_Diff,-0.0026,0.0476,0.0,0.034
+Avg_Goals_Scored_L5_Diff,0.0613,0.1002,0.0,0.0541
+Avg_Goals_Conceded_L5_Diff,0.0183,-0.0542,-0.0,-0.0025
+Team_Prior_Avg_Goals_Scored,-0.2002,-0.1248,-0.0,-0.0874
+Opp_Prior_Avg_Goals_Conceded,0.2099,0.1684,0.1117,0.2398
+Knockout_Stage,0.0771,0.0322,-0.0,0.052
+Host_Advantage,0.0518,0.0406,0.0,0.1114

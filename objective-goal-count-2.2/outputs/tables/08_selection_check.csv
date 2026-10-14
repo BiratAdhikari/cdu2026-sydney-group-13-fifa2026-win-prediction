@@ -1,0 +1,7 @@
+model,cv_RMSE,p_vs_cv_best,Shapiro-Wilk,Jarque-Bera,Breusch-Pagan,Ramsey RESET,all_assumptions_hold
+Lasso (alpha by CV),1.234,,0.0,0.0,0.0998,0.2164,False
+Ridge + log(1 + goals) target,1.2478,0.5694,0.8824,0.895,0.3388,0.8366,True
+Ridge (alpha by CV),1.2545,0.2903,0.0001,0.0,0.4361,0.1926,False
+MLR: winsorise + Yeo-Johnson,1.2641,0.2857,0.0001,0.0,0.4361,0.1926,False
+MLR: z-score,1.2656,0.2497,0.0001,0.0,0.3258,0.1828,False
+MLR: + log(1 + goals) target,1.2693,0.365,0.8824,0.895,0.3388,0.8366,True

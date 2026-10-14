@@ -1,0 +1,6 @@
+step,variables,R2,adj_R2,AIC,BIC,F_test_p,significant_variables,max_VIF
+1. Raw variables,8,0.3061,0.2578,414.7674,440.1499,0.0,1,2.8335
+2. Z-score standardised,8,0.3061,0.2578,414.7674,440.1499,0.0,1,2.8335
+3. Winsorised + Yeo-Johnson,8,0.3087,0.2606,414.2924,439.675,0.0,1,2.8283
+4. Backward elimination (p < 0.05),1,0.2769,0.271,405.8679,411.5085,0.0,1,1.0
+5. log(1 + goals) target (R2 on the log scale),8,0.3255,0.2786,181.8092,207.1918,0.0,2,2.8283

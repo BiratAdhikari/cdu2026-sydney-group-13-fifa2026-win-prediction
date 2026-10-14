@@ -1,0 +1,6 @@
+assumption,test,statistic,p_value,holds_at_5pct
+Normal residuals,Shapiro-Wilk,0.994,0.8824,yes
+Normal residuals,Jarque-Bera,0.222,0.895,yes
+Constant variance,Breusch-Pagan,9.0421,0.3388,yes
+Linear form,Ramsey RESET,0.0427,0.8366,yes
+Independent errors,Durbin-Watson (about 2 is good),1.5247,,
